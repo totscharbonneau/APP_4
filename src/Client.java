@@ -35,7 +35,16 @@ import java.net.*;
 public class Client {
     public static void main(String[] args) throws IOException {
 
-        if (args.length != 1) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter filename : ");
+        String filename = br.readLine();
+        System.out.print("Enter destination_ip : ");
+        String destination_ip = br.readLine();
+
+//        String listening_port = args[2];
+//        boolean addErrors = Boolean.parseBoolean(args[3]);
+
+        if (destination_ip.length() != 1) {
             System.out.println("Usage: java QuoteClient <hostname>");
             return;
         }
