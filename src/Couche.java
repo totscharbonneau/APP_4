@@ -1,4 +1,4 @@
-public class Couche {
+public abstract class Couche {
 
     protected Couche upCouche;
     protected Couche downCouche;
