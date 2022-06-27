@@ -4,12 +4,17 @@ import java.io.*;
 
 public class PhysiqueClient {
 
+    InetAddress address = null;
+
+    public void setAddressDestination(InetAddress address) {
+        this.address = address;
+    }
     // get a datagram socket
     DatagramSocket socket = new DatagramSocket();
 
     // send request
     byte[] buf = new byte[256];
-    InetAddress address = InetAddress.getByName(args[0]);
+
     DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 4445);
         socket.send(packet);
 
