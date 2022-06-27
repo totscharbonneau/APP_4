@@ -1,8 +1,7 @@
 import java.net.*;
-import java.io.*;
 
 
-public class PhysiqueClient {
+public class ClientPhysique extends Couche{
 
     InetAddress address = null;
 
@@ -25,7 +24,7 @@ public class PhysiqueClient {
     // display response
     String received = new String(packet.getData(), 0, packet.getLength());
 
-    public PhysiqueClient() throws SocketException {
+    public ClientPhysique() throws SocketException {
     }
         System.out.println("Quote of the Moment: " + received);
 

@@ -1,4 +1,4 @@
-public class ClientTransport {
+public class ClientTransport extends Couche{
 
 
 }

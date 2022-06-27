@@ -1,2 +1,2 @@
-public class ServerTransport {
+public class ServerTransport extends Couche{
 }
