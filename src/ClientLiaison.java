@@ -1,2 +1,2 @@
-public class ClientLiaison {
+public class ClientLiaison extends Couche{
 }

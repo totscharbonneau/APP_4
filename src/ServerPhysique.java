@@ -1,2 +1,2 @@
-public class ServerPhysique {
+public class ServerPhysique extends Couche{
 }

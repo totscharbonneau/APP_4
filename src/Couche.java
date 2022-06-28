@@ -11,5 +11,15 @@ public abstract class Couche {
         this.downCouche = downCouche;
     }
 
-    public abstract void recevoirUp(byte[] Data);
+    protected abstract void recevoirUp(byte[] PDU);
+
+    protected void envoyerUp(byte[] PDU) throws Exception {
+        upCouche.recevoirDown(PDU);
+    }
+
+    protected abstract void recevoirDown(byte[] PDU) throws Exception;
+
+    protected void envoyerDown(byte[] PDU) {
+        downCouche.recevoirUp(PDU);
+    }
 }
