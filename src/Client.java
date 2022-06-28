@@ -44,10 +44,9 @@ public class Client {
 //        String listening_port = args[2];
 //        boolean addErrors = Boolean.parseBoolean(args[3]);
 
-        if (destination_ip.length() != 1) {
-            System.out.println("Usage: java QuoteClient <hostname>");
-            return;
-        }
+
+        ClientUnique instance = new ClientUnique(filename,destination_ip);
+        instance.Start();
 
 
 

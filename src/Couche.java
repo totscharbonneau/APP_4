@@ -1,4 +1,4 @@
-public class Couche {
+public abstract class Couche {
 
     protected Couche upCouche;
     protected Couche downCouche;
@@ -10,4 +10,6 @@ public class Couche {
     public void setDownCouche(Couche downCouche) {
         this.downCouche = downCouche;
     }
+
+    public abstract void recevoirUp(byte[] Data);
 }

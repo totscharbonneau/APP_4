@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 
 public class ClientApplication extends Couche{
 
@@ -24,15 +26,19 @@ public class ClientApplication extends Couche{
         Path pathFichier = file.toPath();
         byte[] fileBytes = Files.readAllBytes(pathFichier);
         byte[] test;
-        test = new byte[188 + fileBytes.length];
+        test = new byte[200 + fileBytes.length];
 
         for(int i = 0; i < filename.length;i++){
             test[i] = filename[i];
         }
-        for(int i = 188; i < fileBytes.length;i++){
+        for(int i = 200; i < fileBytes.length;i++){
             test[i] = fileBytes[i];
         }
-
         downCouche.recevoirUp(test);
+    }
+
+    @Override
+    public void recevoirUp(byte[] Data) {
+        return;
     }
 }
