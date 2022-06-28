@@ -13,11 +13,11 @@ public abstract class Couche {
 
     protected abstract void recevoirUp(byte[] PDU);
 
-    protected void envoyerUp(byte[] PDU) throws TransmissionErrorException {
+    protected void envoyerUp(byte[] PDU) throws Exception {
         upCouche.recevoirDown(PDU);
     }
 
-    protected abstract void recevoirDown(byte[] PDU) throws TransmissionErrorException;
+    protected abstract void recevoirDown(byte[] PDU) throws Exception;
 
     protected void envoyerDown(byte[] PDU) {
         downCouche.recevoirUp(PDU);
