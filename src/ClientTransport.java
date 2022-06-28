@@ -55,6 +55,22 @@ public class ClientTransport extends Couche{
 
     @Override
     protected void recevoirDown(byte[] PDU) throws Exception {
+        arraycopy(PDU,letterOffset,positionHeader,0,positionOffset);
+        arraycopy(PDU,letterOffset+positionOffset,tailleHeader,0,tailleOffset);
 
+        char lettre = (char) PDU[0];
+
+        byte[] data_bytes = new byte[190];
+
+        arraycopy(PDU,Offset,data_bytes,0,PDU.length-Offset);
+
+        String posString = new String(positionHeader);
+        int i = Integer.parseInt(posString);
+
+        switch(lettre){
+            case 's':
+            case 'e':
+
+        }
     }
 }
