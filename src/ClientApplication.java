@@ -26,12 +26,12 @@ public class ClientApplication extends Couche{
         Path pathFichier = file.toPath();
         byte[] fileBytes = Files.readAllBytes(pathFichier);
         byte[] test;
-        test = new byte[200 + fileBytes.length];
+        test = new byte[190 + fileBytes.length];
 
         for(int i = 0; i < filename.length;i++){
             test[i] = filename[i];
         }
-        for(int i = 200; i < fileBytes.length;i++){
+        for(int i = 190; i < fileBytes.length;i++){
             test[i] = fileBytes[i];
         }
         downCouche.recevoirUp(test);

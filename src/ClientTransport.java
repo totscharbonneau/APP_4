@@ -7,5 +7,7 @@ public class ClientTransport extends Couche{
     public void recevoirUp(byte[] Data) {
         int nbPackets = (int) Math.ceil(Data.length/200);
 
+
+
     }
 }
