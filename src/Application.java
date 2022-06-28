@@ -8,12 +8,12 @@ import java.nio.file.Path;
 import java.util.Arrays;
 
 
-public class ClientApplication extends Couche{
+public class Application extends Couche{
 
-    ClientTransport coucheInferieur = null;
+    Transport coucheInferieur = null;
     private byte[] fichierBytes;
     private String fichierRef = "one-liners.txt";
-    public ClientApplication() throws IOException
+    public Application() throws IOException
     {
         File fichier = new File(fichierRef);
         FileInputStream fichierStream = new FileInputStream(fichier);

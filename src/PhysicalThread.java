@@ -18,8 +18,9 @@ public class PhysicalThread extends Thread {
     public void run() {
 
         while(running){
+
             try {
-                byte[] buf = new byte[256];
+                byte[] buf = new byte[200];
 
                 // receive request
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
@@ -27,9 +28,9 @@ public class PhysicalThread extends Thread {
 
                 parent.recevoirDown(packet.getData());
 
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException e ) {
                 running = false;
+                socket.close();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

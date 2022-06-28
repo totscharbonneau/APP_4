@@ -1,10 +1,9 @@
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 import static java.lang.System.arraycopy;
 import static java.util.Arrays.fill;
 
-public class ClientTransport extends Couche{
+public class Transport extends Couche{
 
     private int letterOffset = 1;
     private int positionOffset = 6;
@@ -43,7 +42,7 @@ public class ClientTransport extends Couche{
                 arraycopy(tailleHeader,0,PDU[i],letterOffset+positionOffset,tailleOffset);
             }
 //            Header de la position
-            fill(positionHeader, (byte) 0);
+            fill(positionHeader, (byte) '0');
             byte[] byteI = (Integer.toString(i)).getBytes(StandardCharsets.US_ASCII);
             arraycopy(byteI,0,positionHeader,positionOffset- byteI.length,byteI.length);
             arraycopy(positionHeader,0,PDU[i],letterOffset,positionOffset);
@@ -69,8 +68,9 @@ public class ClientTransport extends Couche{
 
         switch(lettre){
             case 's':
+                // start
             case 'e':
-
+                // end
         }
     }
 }

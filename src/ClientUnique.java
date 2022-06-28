@@ -2,7 +2,7 @@ import java.io.*;
 
 public class ClientUnique {
     String filename;
-    ClientApplication App;
+    Application App;
 
     Physique physique;
 
@@ -12,9 +12,9 @@ public class ClientUnique {
     }
 
     public void ClientUniqueBuild(String ip_destination) throws IOException {
-        App = new ClientApplication();
-        ClientTransport transport = new ClientTransport();
-        ClientLiaison liaison = new ClientLiaison();
+        App = new Application();
+        Transport transport = new Transport();
+        Liaison liaison = new Liaison();
         physique = new Physique(ip_destination,25000);
         App.setDownCouche(transport);
         transport.setUpCouche(App);

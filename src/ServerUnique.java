@@ -13,8 +13,8 @@ public class ServerUnique {
 
     public void ServerUniqueBuild(int port) throws IOException {
         physique = new Physique("localhost",port);
-        ClientLiaison liaison = new ClientLiaison();
-        ClientTransport transport = new ClientTransport();
+        Liaison liaison = new Liaison();
+        Transport transport = new Transport();
         physique.setUpCouche(liaison);
         liaison.setDownCouche(physique);
         liaison.setUpCouche(transport);
