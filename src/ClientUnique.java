@@ -13,10 +13,13 @@ public class ClientUnique {
         App = new ClientApplication();
         ClientTransport transport = new ClientTransport();
         ClientLiaison liaison = new ClientLiaison();
+        PhysiqueClient physique = new PhysiqueClient(ip_destination);
         App.setDownCouche(transport);
         transport.setUpCouche(App);
         transport.setDownCouche(liaison);
         liaison.setUpCouche(transport);
+        liaison.setDownCouche(physique);
+        physique.setUpCouche(liaison);
 
     }
 
