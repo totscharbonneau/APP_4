@@ -41,4 +41,9 @@ public class ClientApplication extends Couche{
     public void recevoirUp(byte[] Data) {
         return;
     }
+
+    @Override
+    protected void recevoirDown(byte[] PDU) throws Exception {
+
+    }
 }
