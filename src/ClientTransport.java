@@ -50,7 +50,7 @@ public class ClientTransport extends Couche{
 
             envoyerDown(PDU[i]);
         }
-        System.out.println("fin de la transmission de tout les packets packets.");
+        System.out.println("fin de la transmission de tout les packets packets. (Transport)");
     }
 
     @Override

@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class PhysicalThread extends Thread {
 
@@ -8,11 +7,11 @@ public class PhysicalThread extends Thread {
     protected BufferedReader in = null;
     protected boolean running = true;
 
-    private PhysiqueClient parent;
+    private Physique parent;
 
-    public PhysicalThread(PhysiqueClient parent) throws IOException {
+    public PhysicalThread(Physique parent,int port) throws IOException {
         super("Physical Thread");
-        socket = new DatagramSocket(4445);
+        socket = new DatagramSocket(port);
         this.parent = parent;
     }
 
@@ -28,20 +27,6 @@ public class PhysicalThread extends Thread {
 
                 parent.recevoirDown(packet.getData());
 
-//                // figure out response
-//                String dString = null;
-//                if (in == null)
-//                    dString = new Date().toString();
-//                else
-//                    dString = getNextQuote();
-//
-//                buf = dString.getBytes();
-//
-//                // send the response to the client at "address" and "port"
-//                InetAddress address = packet.getAddress();
-//                int port = packet.getPort();
-//                packet = new DatagramPacket(buf, buf.length, address, port);
-//                socket.send(packet);
             } catch (IOException e) {
                 e.printStackTrace();
                 running = false;

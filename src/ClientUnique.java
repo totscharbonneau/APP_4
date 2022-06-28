@@ -4,6 +4,8 @@ public class ClientUnique {
     String filename;
     ClientApplication App;
 
+    Physique physique;
+
     public ClientUnique(String filename, String ip_destination) throws IOException{
         this.filename = filename;
         ClientUniqueBuild(ip_destination);
@@ -13,7 +15,7 @@ public class ClientUnique {
         App = new ClientApplication();
         ClientTransport transport = new ClientTransport();
         ClientLiaison liaison = new ClientLiaison();
-        PhysiqueClient physique = new PhysiqueClient(ip_destination);
+        physique = new Physique(ip_destination,25000);
         App.setDownCouche(transport);
         transport.setUpCouche(App);
         transport.setDownCouche(liaison);
@@ -24,6 +26,9 @@ public class ClientUnique {
     }
 
     public void Start() throws IOException{
+        System.out.println("Client Start");
+        physique.start();
         App.envoyerFichier(filename);
+
     }
 }
